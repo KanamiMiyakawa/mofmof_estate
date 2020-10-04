@@ -6,13 +6,16 @@ class EstatesController < ApplicationController
   end
 
   def show
+    @stations = @estate.stations
   end
 
   def new
     @estate = Estate.new
+    2.times { @estate.stations.build }
   end
 
   def edit
+    @estate.stations.build
   end
 
   def create
@@ -44,6 +47,20 @@ class EstatesController < ApplicationController
   end
 
   def estate_params
-    params.require(:estate).permit(:name, :rent, :place, :age, :other)
+    params.require(:estate).permit(
+      :name,
+      :rent,
+      :place,
+      :age,
+      :other,
+      stations_attributes: [
+        :line,
+        :station_name,
+        :time,
+        :estate_id,
+        :id,
+        :_destroy,
+      ],
+    )
   end
 end
