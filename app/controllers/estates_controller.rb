@@ -61,7 +61,6 @@ class EstatesController < ApplicationController
         :time,
         :estate_id,
         :id,
-        :_destroy,
       ],
     )
   end
