@@ -1,35 +1,32 @@
-<p id="notice"><%= notice %></p>
+<main class="main_wrapper">
+  <p id="notice"><%= notice %></p>
+  <h1>物件一覧</h1>
 
-<h1>Estates</h1>
-
-<table>
-  <thead>
+  <table class="index_table">
     <tr>
-      <th>Name</th>
-      <th>Rent</th>
-      <th>Place</th>
-      <th>Age</th>
-      <th>Other</th>
-      <th colspan="3"></th>
+      <th class="width_1">物件名</th>
+      <th class="width_1">賃料</th>
+      <th class="width_2">住所</th>
+      <th class="width_0">築年数</th>
+      <th class="width_3">備考</th>
+      <th colspan="3" class="width_0"></th>
     </tr>
-  </thead>
 
-  <tbody>
     <% @estates.each do |estate| %>
       <tr>
         <td><%= estate.name %></td>
-        <td><%= estate.rent %></td>
+        <td class="td_center"><%= estate.rent.to_s(:delimited)+%!円! %></td>
         <td><%= estate.place %></td>
-        <td><%= estate.age %></td>
+        <td class="td_center"><%= estate.age.to_s+%!年! %></td>
         <td><%= estate.other %></td>
-        <td><%= link_to 'Show', estate %></td>
-        <td><%= link_to 'Edit', edit_estate_path(estate) %></td>
-        <td><%= link_to 'Destroy', estate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to %!詳細!, estate %></td>
+        <td><%= link_to %!編集!, edit_estate_path(estate) %></td>
+        <td><%= link_to %!削除!, estate, method: :delete, data: { confirm: %!本当に削除しますか？! } %></td>
       </tr>
     <% end %>
-  </tbody>
-</table>
+  </table>
 
-<br>
+  <br>
 
-<%= link_to 'New Estate', new_estate_path %>
+  <%= link_to %!物件を登録する!, new_estate_path %>
+</main>

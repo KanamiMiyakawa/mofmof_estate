@@ -1,0 +1,30 @@
+/*notice*/
+#notice {
+  color: #ee3327;
+  font-weight: bold;
+}
+/*index*/
+.main_wrapper {
+  margin: 50px;
+}
+.index_table {
+  margin: 5px;
+}
+.index_table td {
+  padding: 10px 5px;
+}
+.width_0 {
+  width: 5%;
+}
+.width_1 {
+  width: 10%;
+}
+.width_2 {
+  width: 15%;
+}
+.width_3 {
+  width: 55%;
+}
+.td_center {
+  text-align: center;
+}
