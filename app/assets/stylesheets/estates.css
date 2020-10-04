@@ -32,6 +32,9 @@
 .show_wrapper p {
   padding-bottom: 15px;
 }
+.show_estate {
+  padding-left: 50px;
+}
 /*_form*/
 .field {
   margin-bottom: 10px;

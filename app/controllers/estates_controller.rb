@@ -7,6 +7,7 @@ class EstatesController < ApplicationController
 
   def show
     @stations = @estate.stations
+    @station_count = 0
   end
 
   def new
