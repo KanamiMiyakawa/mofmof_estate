@@ -1,5 +1,6 @@
 class EstatesController < ApplicationController
   before_action :set_estate, only: [:show, :edit, :update, :destroy]
+  before_action :set_station_count, only: [:show, :new, :edit]
 
   def index
     @estates = Estate.all
@@ -7,13 +8,11 @@ class EstatesController < ApplicationController
 
   def show
     @stations = @estate.stations
-    @station_count = 0
   end
 
   def new
     @estate = Estate.new
     2.times { @estate.stations.build }
-    @station_count = 0
   end
 
   def edit
@@ -63,5 +62,9 @@ class EstatesController < ApplicationController
         :id,
       ],
     )
+  end
+
+  def set_station_count
+    @station_count = 0
   end
 end
