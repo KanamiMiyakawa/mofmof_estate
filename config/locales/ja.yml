@@ -17,6 +17,9 @@ ja:
         age: 築年数
         other: 備考
       station:
+        line: 路線名
+        station_name: 駅名
+        time: 徒歩分数
   date:
     abbr_day_names:
     - 日
