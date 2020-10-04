@@ -37,8 +37,27 @@
   </div>
 
   <hr>
-  <br>
 
+  <%= form.fields_for :stations do |station| %>
+
+    <% @station_count = @station_count + 1 %>
+    <h2><%= %!最寄り駅!+@station_count.to_s %></h2>
+
+    <div class="field">
+      <%= station.label :line %><br>
+      <%= station.text_field :line %>
+    </div>
+
+    <div class="field">
+      <%= station.label :station_name %><br>
+      <%= station.text_field :station_name %>
+    </div>
+
+    <div class="field">
+      <%= station.label :time %><br>
+      <%= station.number_field :time %>
+    </div>
+  <% end %>
   <div class="actions">
     <%= form.submit value: "登録する", class:"submit_btn"%>
   </div>

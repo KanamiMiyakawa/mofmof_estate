@@ -12,6 +12,7 @@ class EstatesController < ApplicationController
   def new
     @estate = Estate.new
     2.times { @estate.stations.build }
+    @station_count = 0
   end
 
   def edit
