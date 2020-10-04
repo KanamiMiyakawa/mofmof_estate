@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
+<main class="main_wrapper show_wrapper">
+  <%if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @estate.name %>
-</p>
+  <p>
+    <strong>物件名:</strong>
+    <%= @estate.name %>
+  </p>
 
-<p>
-  <strong>Rent:</strong>
-  <%= @estate.rent %>
-</p>
+  <p>
+    <strong>賃料:</strong>
+    <%= @estate.rent.to_s(:delimited)+%!円! %>
+  </p>
 
-<p>
-  <strong>Place:</strong>
-  <%= @estate.place %>
-</p>
+  <p>
+    <strong>住所:</strong>
+    <%= @estate.place %>
+  </p>
 
-<p>
-  <strong>Age:</strong>
-  <%= @estate.age %>
-</p>
+  <p>
+    <strong>築年数:</strong>
+    <%= @estate.age.to_s+%!年! %>
+  </p>
 
-<p>
-  <strong>Other:</strong>
-  <%= @estate.other %>
-</p>
+  <p>
+    <strong>備考:</strong>
+    <%= @estate.other %>
+  </p>
 
-<%= link_to 'Edit', edit_estate_path(@estate) %> |
-<%= link_to 'Back', estates_path %>
+  <hr>
+  <br>
+  <%= link_to %!編集!, edit_estate_path(@estate) %> |
+  <%= link_to %!戻る!, estates_path %>
+</main>
