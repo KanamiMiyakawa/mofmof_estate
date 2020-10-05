@@ -1,7 +1,7 @@
 <%= form_with(model: estate, local: true) do |form| %>
   <% if estate.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(estate.errors.count, "error") %> prohibited this estate from being saved:</h2>
+      <h2>登録中に<%= pluralize(estate.errors.count, "個") %>のエラーが発生しました </h2>
 
       <ul>
       <% estate.errors.full_messages.each do |message| %>
