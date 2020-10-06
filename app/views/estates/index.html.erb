@@ -1,0 +1,34 @@
+<main class="main_wrapper">
+  <% if notice%>
+    <p id="notice"><%= notice %></p>
+  <% end %>
+  <h1>物件一覧</h1>
+
+  <table class="index_table">
+    <tr>
+      <th class="width_1">物件名</th>
+      <th class="width_1">賃料</th>
+      <th class="width_2">住所</th>
+      <th class="width_0">築年数</th>
+      <th class="width_3">備考</th>
+      <th colspan="3" class="width_0"></th>
+    </tr>
+
+    <% @estates.each do |estate| %>
+      <tr>
+        <td><%= estate.name %></td>
+        <td class="td_center"><%= estate.rent.to_s(:delimited)+%!円! %></td>
+        <td><%= estate.place %></td>
+        <td class="td_center"><%= estate.age.to_s+%!年! %></td>
+        <td><%= estate.other %></td>
+        <td><%= link_to %!詳細!, estate %></td>
+        <td><%= link_to %!編集!, edit_estate_path(estate) %></td>
+        <td><%= link_to %!削除!, estate, method: :delete, data: { confirm: %!本当に削除しますか？! } %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <br>
+
+  <%= link_to %!物件を登録する!, new_estate_path %>
+</main>
